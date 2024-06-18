@@ -7,10 +7,10 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'background3':"url('https://res.cloudinary.com/dbpcptmco/image/upload/v1716203886/sl-banner4_v3jwr1.jpg')",
-        'background2':"url('https://res.cloudinary.com/dbpcptmco/image/upload/v1716203885/sl-banner1_minsc9.jpg')",
-        'background4':"url('https://res.cloudinary.com/dbpcptmco/image/upload/v1716203885/sl-banner2_asbj60.jpg')",
-        'background':"url('https://res.cloudinary.com/dbpcptmco/image/upload/v1716203885/sl-banner3_rnbfst.jpg')",
+        'background3':"url('https://res.cloudinary.com/dbpcptmco/image/upload/v1718738867/slider4_dss17w.webp')",
+        'background4':"url('https://res.cloudinary.com/dbpcptmco/image/upload/v1718732916/slider3_ckgfot.webp')",
+        'background2':"url('https://res.cloudinary.com/dbpcptmco/image/upload/v1718732918/school-kids_y1kevq.jpg')",
+        'background':"url('https://res.cloudinary.com/dbpcptmco/image/upload/v1718738916/hero_pq6ety.jpg')",
         'bgimage': "url('https://p.w3layouts.com/demos_new/template_demo/20-03-2021/cleanfreshly-liberty-demo_Free/1414300734/web/assets/images/banner2.jpg')",
         'aboutImage':"url('https://p.w3layouts.com/demos_new/template_demo/08-09-2021/shipper-liberty-demo_Free/1111825838/web/assets/images/banner2.jpg')"
 

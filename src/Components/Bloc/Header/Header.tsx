@@ -13,7 +13,7 @@ const Header: React.FC = () => {
 
   return (
     <div
-      className="bg-[white] w-full h-[70px] z-10 flex justify-center xmd:fixed xmd:top-0 xmd:shadow-md "
+      className=" w-full h-[70px] z-10 flex justify-center absolute xmd:fixed xmd:top-0 xmd:shadow-md "
       id="her"
     >
   
@@ -32,7 +32,7 @@ const Header: React.FC = () => {
                 className={({ isActive }) =>
                   isActive
                     ? "text-[16px] font-[500] text-[var(--red)] animate-pulse"
-                    : "text-[16px] font-[500] text-[#141414]"
+                    : "text-[16px] font-[500] text-[var(--white)]"
                 }
               >
                 Home
@@ -42,7 +42,7 @@ const Header: React.FC = () => {
                 className={({ isActive }) =>
                   isActive
                     ? "text-[16px] font-[500] text-[var(--red)]  animate-pulse"
-                    : "text-[16px] font-[500] text-[#141414]"
+                    : "text-[16px] font-[500] text-[var(--white)]"
                 }
               >
                 About
@@ -52,7 +52,7 @@ const Header: React.FC = () => {
                 className={({ isActive }) =>
                   isActive
                     ? "text-[16px] font-[500] text-[var(--red)] animate-pulse"
-                    : "text-[16px] font-[500] text-[#141414]"
+                    : "text-[16px] font-[500] text-[var(--white)]"
                 }
               >
                 Services
@@ -62,7 +62,7 @@ const Header: React.FC = () => {
                 className={({ isActive }) =>
                   isActive
                     ? "text-[16px] font-[500] text-[var(--red)] animate-pulse"
-                    : "text-[16px] font-[500] text-[#141414]"
+                    : "text-[16px] font-[500] text-[var(--white)]"
                 }
               >
                 Gallery
@@ -82,21 +82,21 @@ const Header: React.FC = () => {
           </div>
           {show ? (
             <div
-              className="hidden items-center text-[black] text-4xl md:flex cursor-pointer"
+              className="hidden items-center text-[white] text-4xl md:flex cursor-pointer"
               onClick={Toggle}
             >
               <BsFillDiscFill />
             </div>
           ) : (
             <div
-              className="hidden items-center text-[black] text-4xl md:flex cursor-pointer"
+              className="hidden items-center text-[white] text-4xl md:flex cursor-pointer"
               onClick={Toggle}
             >
               <BiMenu />
             </div>
           )}
       {show ? (
-        <div className="hidden md:flex h-screen w-44 bg-[white] top-28 right-0 fixed flex-col items-center">
+        <div className="hidden md:flex h-screen w-44 bg-[white] top-[75px] right-0 fixed flex-col items-center">
           <div className="flex gap-[20px] flex-col">
             <NavLink
               to="/"
