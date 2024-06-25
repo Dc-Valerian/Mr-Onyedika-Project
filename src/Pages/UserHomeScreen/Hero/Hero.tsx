@@ -24,7 +24,7 @@ const Hero = () => {
         data-swiper-autoplay="9000"
       >
         <SwiperSlide>
-          <div className="w-full bg-background flex justify-center overflow-hidden bg-no-repeat bg-cover h-[800px]">
+          <div className="w-full bg-background flex justify-center overflow-hidden bg-no-repeat bg-cover h-[700px]">
             <div className="w-full pb-56 bg-[black] bg-opacity-50 flex flex-col  justify-center items-center  xmd:justify-center xmd:flex xmd:items-center">
               <div className=" flex w-[60%] justify-center items-center  flex-col mt-80 text-white xmd:mt-40 gap-[15px] xmd:gap-[10px]">
                 <Fade direction="down">
@@ -60,7 +60,7 @@ const Hero = () => {
         </SwiperSlide>
 
         <SwiperSlide>
-          <div className="w-full bg-background2 flex justify-center overflow-hidden bg-no-repeat bg-cover h-[800px] xmd:bg-center">
+          <div className="w-full bg-background2 flex justify-center overflow-hidden bg-no-repeat bg-cover h-[700px] xmd:bg-center">
             <div className="w-full pb-56 bg-[black] bg-opacity-50 flex flex-col  justify-center items-center  xmd:justify-center xmd:flex xmd:items-center">
             <div className=" flex w-[60%] justify-center items-center  flex-col mt-80 text-white xmd:mt-40 gap-[15px] xmd:gap-[10px]">
                 <Fade direction="down">
@@ -96,7 +96,7 @@ const Hero = () => {
         </SwiperSlide>
 
         <SwiperSlide>
-          <div className="w-full bg-background3 flex justify-center overflow-hidden bg-no-repeat bg-cover h-[800px] xmd:bg-center">
+          <div className="w-full bg-background3 flex justify-center overflow-hidden bg-no-repeat bg-cover h-[700px] xmd:bg-center">
             <div className="w-full pb-56 bg-[black] bg-opacity-50 flex flex-col  justify-center items-center  xmd:justify-center xmd:flex xmd:items-center">
             <div className=" flex w-[60%] justify-center items-center  flex-col mt-80 text-white xmd:mt-40 gap-[15px] xmd:gap-[10px]">
                 <Fade direction="down">
@@ -132,7 +132,7 @@ const Hero = () => {
         </SwiperSlide>
 
         <SwiperSlide>
-          <div className="w-full bg-background4 flex justify-center overflow-hidden bg-no-repeat bg-cover h-[800px] xmd:bg-cover">
+          <div className="w-full bg-background4 flex justify-center overflow-hidden bg-no-repeat bg-cover h-[700px] xmd:bg-cover">
             <div className="w-full pb-56 bg-[black] bg-opacity-50 flex flex-col  justify-center items-center  xmd:justify-center xmd:flex xmd:items-center">
             <div className=" flex w-[60%] justify-center items-center  flex-col mt-80 text-white xmd:mt-40 gap-[15px] xmd:gap-[10px]">
                 <Fade direction="down">
