@@ -5,8 +5,8 @@ import { RiInstagramFill } from 'react-icons/ri'
 
 const Footer = () => {
   return (
-    <div className=' w-full flex justify-center items-center min-h-[400px] border-t border-gray-300 xmd:bg-[red]'>
-      <div className=' w-[90%] flex justify-between xmd:flex-wrap xmd:my-5 xmd:bg-[yellow]'>
+    <div className=' w-full flex justify-center items-center min-h-[300px] border-t border-gray-300 '>
+      <div className=' w-[90%] flex justify-between xmd:flex-wrap xmd:my-5 '>
         <main className='w-[450px] xmd:flex-col xmd:items-center xmd:mb-10'>
           <div className=' font-black text-2xl '>Watch.</div>
           <p className='  text-sm text-[#909090] my-4 premobile1:text-center'>

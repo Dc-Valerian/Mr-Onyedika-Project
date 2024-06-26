@@ -1,8 +1,9 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { BiMenu } from "react-icons/bi";
 import { BsFillDiscFill } from "react-icons/bs";
 import Button from "../../reUse/ButtonProps/Button";
+import { RiShoppingCartLine } from "react-icons/ri";
 
 const Header: React.FC = () => {
   const [show, setShow] = useState(false);
@@ -11,27 +12,48 @@ const Header: React.FC = () => {
     setShow(!show);
   };
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div
-      className=" w-full h-[70px] z-10 flex justify-center absolute xmd:fixed xmd:top-0 xmd:shadow-md "
+      className={`fixed top-0 z-10 w-full h-[70px] flex justify-center  xmd:fixed xmd:top-0 xmd:shadow-md ${
+        isScrolled ? "bg-[var(--secondaryColor1)]" : "bg-transparent"
+      }`}
       id="her"
     >
   
       
           <div className="w-[85%] h-full flex justify-between items-center ">
-            <div className="w-[30%] flex items-center h-[100%] xmd:w-[50%]">
+            <div className="w-[20%]  flex items-center h-[100%] xmd:w-[50%]">
               <img
                 src="https://res.cloudinary.com/dbpcptmco/image/upload/v1718732868/logo1_mhgb0o.png"
                 alt="header_image"
                 className="h-[80%] object-contain xmd:w-[90%] xmd:[100%]"
               />
             </div>
-            <div className="flex gap-[40px] items-center xmd:hidden">
+
+
+            <div className="flex gap-[40px] items-center justify-center  xmd:hidden ">
               <NavLink
                 to="/"
                 className={({ isActive }) =>
                   isActive
-                    ? "text-[16px] font-[500] text-[var(--red)] animate-pulse"
+                    ? "text-[16px] font-[500] text-[var(--mainColor1)] animate-pulse"
                     : "text-[16px] font-[500] text-[var(--white)]"
                 }
               >
@@ -41,7 +63,7 @@ const Header: React.FC = () => {
                 to="/about"
                 className={({ isActive }) =>
                   isActive
-                    ? "text-[16px] font-[500] text-[var(--red)]  animate-pulse"
+                    ? "text-[16px] font-[500] text-[var(--mainColor1)]  animate-pulse"
                     : "text-[16px] font-[500] text-[var(--white)]"
                 }
               >
@@ -51,7 +73,7 @@ const Header: React.FC = () => {
                 to="/services"
                 className={({ isActive }) =>
                   isActive
-                    ? "text-[16px] font-[500] text-[var(--red)] animate-pulse"
+                    ? "text-[16px] font-[500] text-[var(--mainColor1)] animate-pulse"
                     : "text-[16px] font-[500] text-[var(--white)]"
                 }
               >
@@ -61,16 +83,35 @@ const Header: React.FC = () => {
                 to="/gallery"
                 className={({ isActive }) =>
                   isActive
-                    ? "text-[16px] font-[500] text-[var(--red)] animate-pulse"
+                    ? "text-[16px] font-[500] text-[var(--mainColor1)] animate-pulse"
                     : "text-[16px] font-[500] text-[var(--white)]"
                 }
               >
                 Gallery
               </NavLink>
+
+          
+            </div>
+
+            <div className="flex gap-10">
+            <div className={`icons flex w-[9%] items-center justify-end `}>
+            <div
+              className="
+              hover:cursor-pointer transition duration-300 ease-in-out hover:scale-[1.09]
+              "
+              
+            >
+              <RiShoppingCartLine className="text-[28px]  absolute text-[white]" />
+              <div className=" bg-[var(--red)] w-[20px] h-[20px] rounded-full flex items-center justify-center text-[14px] relative left-[18px] bottom-[8px] text-[white]">
+               3
+              </div>
+            </div>
+          </div>
+
               <Button
                 width="132px"
-                text="Contact Us"
-                backgroundColor="var(--red)"
+                text="Admin Login"
+                backgroundColor="var(--mainColor1)"
                 color="white"
                 height="45px"
                 link="/contact"

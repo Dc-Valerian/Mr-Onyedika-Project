@@ -1,53 +1,62 @@
+import React, { useState, useEffect } from "react";
 
+const BackToTopButton: React.FC = () => {
+  const [showButton, setShowButton] = useState(false);
+  const [borderPosition, setBorderPosition] = useState(0);
+  const [borderColor, setBorderColor] = useState(generateRandomColor());
+  const [backgroundColor, setBackgroundColor] = useState(generateRandomColor());
 
-// import React, { useState, useEffect } from 'react';
-// import { Link } from 'react-scroll';
-// import { BsFillArrowUpCircleFill } from 'react-icons/bs';
+  function generateRandomColor() {
+    const randomRed = Math.floor(Math.random() * 256);
+    const randomGreen = Math.floor(Math.random() * 256);
+    const randomBlue = Math.floor(Math.random() * 256);
+    return `rgb(${randomRed},${randomGreen},${randomBlue})`;
+  }
 
-// const BacktoTop: React.FC = () => {
-//   const [show, setShow] = useState(false);
+  const handleScroll = () => {
+    if (window.scrollY > 100) {
+      setShowButton(true);
 
-//   const showBackToTop = () => {
-//     if (window.scrollY >= 80) {
-//       setShow(true);
-//     } else {
-//       setShow(false);
-//     }
-//   };
+      // Calculate the border position based on scroll position
+      setBorderPosition((window.scrollY - 100) * 2); // Adjust the factor for the desired circular movement speed
 
-//   useEffect(() => {
-//     window.addEventListener('scroll', showBackToTop);
-//     return () => {
-//       window.removeEventListener('scroll', showBackToTop);
-//     };
-//   }, []);
+      // Update the border color
+      setBorderColor(generateRandomColor());
+      setBackgroundColor(generateRandomColor());
+    } else {
+      setShowButton(false);
+    }
+  };
 
-//   return (
-//     <div className={`${show ? 'block' : 'hidden'} fixed bottom-8 right-4 md:right-12`}>
-//       <Link to="hero" smooth={true} duration={5000} offset={-7000}>
-//         <div
-//           className="
-//             cursor-pointer w-12 h-12 flex justify-center items-center
-//             bg-white bg-opacity-25 shadow-lg backdrop-blur-sm border border-white border-opacity-18
-//             animate-bounce rounded-xl text-black text-3xl
-//           "
-//         >
-//           <BsFillArrowUpCircleFill />
-//         </div>
-//       </Link>
-//     </div>
-//   );
-// };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
 
-// export default BacktoTop;
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
-
-const BacktoTop = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <button
+      className={`${
+        showButton ? "opacity-100" : "opacity-0"
+      } fixed right-1 bottom-2 border-4 p-2 rounded-full border-[peru] h-[40px] w-[40px]`}
+      style={{
+        transform: `translateX(-50%) translateY(-50%) rotate(${borderPosition}deg)`,
+        borderColor:borderColor,
+        backgroundColor:backgroundColor,
+      }}
+      onClick={scrollToTop}
+    >
+      ▲
+    </button>
+  );
+};
 
-export default BacktoTop
+export default BackToTopButton;
