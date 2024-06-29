@@ -4,9 +4,21 @@ import { BiMenu } from "react-icons/bi";
 import { BsFillDiscFill } from "react-icons/bs";
 import Button from "../../reUse/ButtonProps/Button";
 import { RiShoppingCartLine } from "react-icons/ri";
+import { HiMenuAlt3 } from "react-icons/hi";
+import { useAppSelector } from "../../Global/Store";
+import Cart from "../../../Pages/Cart/Cart";
 
 const Header: React.FC = () => {
   const [show, setShow] = useState(false);
+
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  const readCartQuantity = useAppSelector((state) => state.totalQuantity);
+
+ 
+  const toggleDialog = () => setIsDialogOpen(!isDialogOpen);
+
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const Toggle = () => {
     setShow(!show);
@@ -108,14 +120,23 @@ const Header: React.FC = () => {
             </div>
           </div>
 
+          <div
+            onClick={onOpenHandler}
+            className="text-[33px] cursor-pointer lg:hidden mt-[12px] md:text-[30px]"
+          >
+            <HiMenuAlt3 />
+          </div>
+
+          <Cart open={isDialogOpen} setOpen={setIsDialogOpen} />
+
               <Button
                 width="132px"
                 text="Admin Login"
                 backgroundColor="var(--mainColor1)"
                 color="white"
                 height="45px"
-                link="/contact"
-                hoverColor=""
+                link="/admin-login"
+                hoverColor="red"
                 backgroundColorHover=""
                 border=""
               />
