@@ -1,13 +1,16 @@
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { MdCancel } from "react-icons/md";
-import { UseAppDispatch, useAppSelector } from "../../Components/Global/Store";
+import {
+  UseAppDispatch,
+  useAppSelector,
+} from "../../../Components/Global/Store";
 import {
   addToCart,
   clearCart,
   remove,
   removeFromCart,
-} from "../../Components/Global/ReduxState";
+} from "../../../Components/Global/ReduxState";
 
 interface ExampleProps {
   open: boolean;

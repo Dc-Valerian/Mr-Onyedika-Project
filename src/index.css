@@ -82,9 +82,9 @@ body {
   --accent: #050816; 
   --cyan:#fe0222;
   
-  --mainColor1:#007bff;
-  --secondaryColor1:#ff69b4;
-  --accent1:#f7dc6f;
+  --mainColor1:#a16207;
+  --secondaryColor1:#fff599;
+  --accent1:#ffa07a;
 
   --mainColor2:#ffa07a;
   --secondaryColor2:#87ceeb;
@@ -129,7 +129,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
   border-radius: 30px;
-  background-color: var(--red);
+  background-color: var(--mainColor1);
   border: 5px solid transparent;
   background-clip: content-box;
   height: 50px;
@@ -272,3 +272,133 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
    margin-top: 5px;
   }
   }
+
+
+  
+@media screen and (max-width:500px){
+  .searchHolder{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  }
+  }
+  
+  
+  @media screen and (max-width:500px){
+  .searchInput{
+  width: 95%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+  }
+  @media screen and (max-width:500px){
+  .holderholderholder{
+      background-color: #F3F4F6;
+  }
+  }
+  
+  
+  
+  
+  
+  
+  
+  @media screen and (max-width:500px){
+  .holderHolder{
+      display: flex;
+      gap: 60px;
+      height: fit-content;
+  }
+  }
+  
+  @media screen and (max-width:500px){
+  .uploadImageHolder{
+      height: 300px;
+      background-color:rgb(209 213 400);
+  }
+  }
+  
+  @media screen and (max-width:500px){
+  .imageItself{
+      height: 90%;
+      width: 90%;
+      object-fit: cover;
+  }
+  } 
+  
+  @media screen and (max-width:500px){
+  .imageHolder{
+      height: 450px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background-color: rgb(209 213 219);
+  }
+  }
+  
+  
+  
+  @media screen and (max-width:500px){
+    .mainDetailStyle{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    }
+    }
+    
+    @media screen and (max-width:500px){
+        .mainDefaultStyle{
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
+            height: fit-content;
+            margin-top: 20px;
+            border-radius: 10px;
+    }
+    }
+    
+    @media screen and (max-width:500px){
+    .detailImageHolder{
+    width: 90%;
+    height: 280px;
+    margin-bottom: 20px;
+    
+    }
+    }
+    
+    @media screen and (max-width:500px){
+    .detailImage{
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    }}
+    
+    @media screen and (max-width:500px){
+    .detailDetail{
+    width:95%;
+    }}
+    
+    
+    @media screen and (max-width:500px){
+    .detailInfo{
+    width:95%;
+    }}
+    
+    @media screen and (max-width:500px){
+    .detailInfo1{
+    font-size:30px;
+    line-height: 35px;
+    }}
+    
+    @media screen and (max-width:500px){
+    .detailFunction{
+        height: 90px;
+        margin-top: 10px;
+        width: 95%;
+    }}
+    
+    

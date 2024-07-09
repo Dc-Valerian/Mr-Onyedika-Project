@@ -1,52 +1,37 @@
-import React, { useEffect, useState } from "react";
+import React, {useState} from "react";
 import { NavLink } from "react-router-dom";
 import { BiMenu } from "react-icons/bi";
 import { BsFillDiscFill } from "react-icons/bs";
 import Button from "../../reUse/ButtonProps/Button";
 import { RiShoppingCartLine } from "react-icons/ri";
-import { HiMenuAlt3 } from "react-icons/hi";
+// import { HiMenuAlt3 } from "react-icons/hi";
 import { useAppSelector } from "../../Global/Store";
-import Cart from "../../../Pages/Cart/Cart";
+import Cart from "../../../Pages/UserHomeScreen/Cart/Cart";
 
 const Header: React.FC = () => {
   const [show, setShow] = useState(false);
 
-  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const readCartQuantity = useAppSelector((state) => state.totalQuantity);
 
- 
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
+
   const toggleDialog = () => setIsDialogOpen(!isDialogOpen);
 
-  const dropdownRef = useRef<HTMLDivElement>(null);
+  // const onOpenHandler = () => setOpen(true);
 
   const Toggle = () => {
     setShow(!show);
   };
 
-  const [isScrolled, setIsScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 200) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+ 
 
   return (
     <div
-      className={`fixed top-0 z-10 w-full h-[70px] flex justify-center  xmd:fixed xmd:top-0 xmd:shadow-md ${
-        isScrolled ? "bg-[var(--secondaryColor1)]" : "bg-transparent"
-      }`}
-      id="her"
+      className={`fixed top-0 z-10 w-full h-[70px] flex justify-center  xmd:fixed xmd:top-0 xmd:shadow-md bg-[white]
+      `}
     >
   
       
@@ -66,70 +51,71 @@ const Header: React.FC = () => {
                 className={({ isActive }) =>
                   isActive
                     ? "text-[16px] font-[500] text-[var(--mainColor1)] animate-pulse"
-                    : "text-[16px] font-[500] text-[var(--white)]"
+                    : "text-[16px] font-[500] text-[var(--black)]"
                 }
               >
                 Home
               </NavLink>
               <NavLink
-                to="/about"
+                to="/shop"
                 className={({ isActive }) =>
                   isActive
                     ? "text-[16px] font-[500] text-[var(--mainColor1)]  animate-pulse"
-                    : "text-[16px] font-[500] text-[var(--white)]"
+                    : "text-[16px] font-[500] text-[var(--black)]"
                 }
               >
-                About
-              </NavLink>
-              <NavLink
-                to="/services"
-                className={({ isActive }) =>
-                  isActive
-                    ? "text-[16px] font-[500] text-[var(--mainColor1)] animate-pulse"
-                    : "text-[16px] font-[500] text-[var(--white)]"
-                }
-              >
-                Services
+              Shop-Now!!
               </NavLink>
               <NavLink
                 to="/gallery"
                 className={({ isActive }) =>
                   isActive
                     ? "text-[16px] font-[500] text-[var(--mainColor1)] animate-pulse"
-                    : "text-[16px] font-[500] text-[var(--white)]"
+                    : "text-[16px] font-[500] text-[var(--black)]"
                 }
               >
-                Gallery
+              Gallery
+              </NavLink>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-[16px] font-[500] text-[var(--mainColor1)] animate-pulse"
+                    : "text-[16px] font-[500] text-[var(--black)]"
+                }
+              >
+                Contact Us
               </NavLink>
 
           
             </div>
 
-            <div className="flex gap-10">
+            <div className="flex gap-10 xmd:w-[35%]">
             <div className={`icons flex w-[9%] items-center justify-end `}>
             <div
               className="
               hover:cursor-pointer transition duration-300 ease-in-out hover:scale-[1.09]
               "
-              
+              onClick={toggleDialog}
             >
-              <RiShoppingCartLine className="text-[28px]  absolute text-[white]" />
-              <div className=" bg-[var(--red)] w-[20px] h-[20px] rounded-full flex items-center justify-center text-[14px] relative left-[18px] bottom-[8px] text-[white]">
-               3
+              <RiShoppingCartLine className="text-[28px]  absolute text-[black]" />
+              <div className=" bg-[red] w-[20px] h-[20px] rounded-full flex items-center justify-center text-[14px] relative left-[18px] bottom-[8px] text-[white]">
+                {readCartQuantity}
               </div>
             </div>
           </div>
 
-          <div
+          {/* <div
             onClick={onOpenHandler}
             className="text-[33px] cursor-pointer lg:hidden mt-[12px] md:text-[30px]"
           >
             <HiMenuAlt3 />
-          </div>
+          </div> */}
 
           <Cart open={isDialogOpen} setOpen={setIsDialogOpen} />
 
-              <Button
+           <div className="xmd:hidden">
+           <Button
                 width="132px"
                 text="Admin Login"
                 backgroundColor="var(--mainColor1)"
@@ -140,6 +126,7 @@ const Header: React.FC = () => {
                 backgroundColorHover=""
                 border=""
               />
+           </div>
             </div>
           </div>
           {show ? (
